@@ -1,0 +1,17 @@
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: hello-spring-cloud-web
+  labels:
+    app.kubernetes.io/name: hello-spring-cloud
+    app.kubernetes.io/component: web
+spec:
+  ports:
+  - name: 9090-tcp
+    port: 9090
+    targetPort: 9090
+  selector:
+    app.kubernetes.io/name: hello-spring-cloud
+    app.kubernetes.io/component: web
